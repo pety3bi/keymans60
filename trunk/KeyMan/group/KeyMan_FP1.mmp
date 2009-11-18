@@ -1,0 +1,44 @@
+// KeyMan project
+
+MACRO SERIES_60_FP1
+COMPRESSTARGET
+
+TARGET                                  KeyMan.app 
+TARGETTYPE                              app 
+UID                                     0x100039CE 0x20008D94 
+TARGETPATH                              \system\apps\KeyMan 
+
+SOURCEPATH                              ..\data 
+RESOURCE                                KeyMan.rss 
+RESOURCE                                KeyMan_caption.rss 
+
+SOURCEPATH                              ..\src 
+SOURCE                                  KeyManListBox.cpp 
+SOURCE                                  KeyManDocument.cpp 
+SOURCE                                  KeyManAppUi.cpp 
+SOURCE                                  KeyManApp.cpp 
+
+USERINCLUDE                             ..\inc 
+USERINCLUDE                             ..\loc
+
+SYSTEMINCLUDE                           \epoc32\include 
+
+LIBRARY                                 cone.lib
+LIBRARY                                 eikcore.lib
+LIBRARY                                 eikcoctl.lib
+LIBRARY                                 avkon.lib
+LIBRARY                                 aknnotify.lib
+LIBRARY                                 sysutil.lib
+LIBRARY                                 hal.lib
+LIBRARY                                 euser.lib
+LIBRARY                                 apparc.lib
+LIBRARY                                 apgrfx.lib
+LIBRARY                                 ws32.lib
+LIBRARY                                 commonengine.lib
+LIBRARY                                 bteng.lib
+LIBRARY                                 plpvariant.lib
+LIBRARY                                 flogger.lib
+
+LANG                                    01 16 93
+
+AIF                                     KeyMan.aif ..\aif KeyManaif.rss c24,8 qgn_keyman_cxt.bmp qgn_keyman_cxt_mask.bmp qgn_keyman_lst.bmp qgn_keyman_lst_mask.bmp

@@ -1,0 +1,7 @@
+#define qtn_lsw_caption "KeyMan"
+#define qtn_lsw_short_caption "KeyMan"
+
+#define qtn_lsw_authors "Copyright © IRoN (2006-2007)\nWebMoney\nR929500609794\nМобильный Кошелек\n9201529585"
+#define qtn_lsw_authors_header "KeyMan"
+
+#define qtn_lsw_developers "Additional developers:\nAlex Yakovlev, Oleg Golosovskiy, Artem 'Redart' Bozhenov, Mika Raento, Gensnet, Baloo, asimo\nTranslation:\nsl@id\nLogo designer:\nboroda1\nThanks:Electromaster\naxy\nBzZzZz"

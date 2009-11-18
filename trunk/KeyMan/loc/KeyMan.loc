@@ -1,0 +1,26 @@
+// The Text in source files is encoded in UTF-8
+
+CHARACTER_SET UTF8
+
+// Default
+#include "KeyMan.def"
+
+// Keys description
+#include "KeyMan.des"
+
+// Localisation
+
+// English
+#ifdef LANGUAGE_01
+#include "KeyMan.l01"
+#endif
+
+// Russian
+#ifdef LANGUAGE_16
+#include "KeyMan.l16"
+#endif
+
+// Ukrainian
+#ifdef LANGUAGE_93
+#include "KeyMan.l93"
+#endif
