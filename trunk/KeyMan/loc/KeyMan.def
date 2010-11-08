@@ -1,0 +1,4 @@
+#define qtn_caption "KeyMan"
+#define qtn_short_caption "KeyMan"
+
+#define qtn_about_text "Additional developers:"<0x2028>"Alex Yakovlev"<0x2028>"Oleg Golosovskiy"<0x2028>"Artem 'Redart' Bozhenov"<0x2028>"Mika Raento"<0x2028>"Gensnet"<0x2028>"Baloo"<0x2028>"asimo"<0x2028><0x2028>"Translation:"<0x2028>"sl@id"<0x2028><0x2028>"Logo designer:"<0x2028>"boroda1"<0x2028><0x2028>"Thanks:"<0x2028>"Electromaster"<0x2028>"axy"<0x2028>"BzZzZz"<0x2028><0x2028>"Greetings:"<0x2028>"JasF"<0x2028>"Poltorash"<0x2028>"FASHIST"<0x2028>"beliy"<0x2028>"deep"<0x2028>"LadyBless"<0x2028>"ElysiuM"

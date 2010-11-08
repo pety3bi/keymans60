@@ -1,0 +1,64 @@
+// KeyMan project
+
+MACRO SERIES_60_FP3
+COMPRESSTARGET
+
+TARGET                                  KeyMan_FP3.app
+TARGETTYPE                              app
+UID                                     0x100039CE 0x20008D94
+TARGETPATH                              \system\apps\KeyMan
+
+SOURCEPATH                              ..\src
+SOURCE                                  KeyManListBox.cpp
+SOURCE                                  KeyManDocument.cpp
+SOURCE                                  KeyManContainerSettings.cpp
+SOURCE                                  KeyManContainerAbout.cpp
+SOURCE                                  KeyManView1.cpp
+SOURCE                                  KeyManView2.cpp
+SOURCE                                  KeyManAppUi.cpp
+SOURCE                                  KeyManApp.cpp
+
+USERINCLUDE                             ..\inc
+USERINCLUDE                             ..\loc
+
+SYSTEMINCLUDE                           \epoc32\include
+
+START RESOURCE                          ..\data\KeyMan.rss
+HEADER
+LANG                                    01 16 93
+END
+
+START RESOURCE ..\data\KeyMan_reg.rss
+TARGETPATH \private\10003a3f\apps
+END
+
+LIBRARY                                 cone.lib
+LIBRARY                                 eikcore.lib
+LIBRARY                                 eikcoctl.lib
+LIBRARY                                 avkon.lib
+LIBRARY                                 aknnotify.lib
+LIBRARY                                 vibractrl.lib
+LIBRARY                                 sysutil.lib
+LIBRARY                                 hal.lib
+LIBRARY                                 euser.lib
+LIBRARY                                 apparc.lib
+LIBRARY                                 apgrfx.lib
+LIBRARY                                 ws32.lib
+LIBRARY                                 commonengine.lib
+LIBRARY                                 bteng.lib
+LIBRARY                                 plpvariant.lib
+LIBRARY                                 flogger.lib
+
+LIBRARY                                 etext.lib
+LIBRARY                                 egul.lib
+LIBRARY                                 gdi.lib
+
+//FILE
+LIBRARY									efsrv.lib
+
+//SKIN
+LIBRARY                                 aknskins.lib
+LIBRARY                                 aknskinsrv.lib
+
+//LANGUAGE
+LIBRARY									akninputlanguage.lib

@@ -1,0 +1,87 @@
+#define ELanguage                          ELangEnglish
+
+#define qtn_register                       "Registration"
+#define qtn_register_code                  "Unlock code"
+
+#define qtn_on                             "Enable"
+#define qtn_off                            "Disable"
+
+#define qtn_autostart_title                "Autostart"
+#define qtn_mmkey_title                    "Terminate AnyKey"
+
+#define qtn_filemanagers_title             "File Managers"
+#define qtn_camera_title                   "Camera"
+#define qtn_bookreaders_title              "QReader"
+
+#define qtn_keys_toggle_title              "Show KeyMan"
+#define qtn_keys_title                     "Switch language"
+#define qtn_language_title_first           "1st language"
+#define qtn_language_title_second          "2nd language"
+#define qtn_language_title_third           "3rd language"
+
+#define qtn_language                       "Language:\n%S"
+
+#define qtn_keys_memory_title              "Compress Memory"
+#define qtn_keys_restart_title             "Restart Phone"
+#define qtn_keys_shutdown_title            "Turn off"
+
+#define qtn_keys_btstate_title             "Bluetooth"
+#define qtn_keys_btmode_title              "Phone visibility"
+
+#define qtn_bt_mode                        "Visibility mode:\n%S"
+#define qtn_bt_mode_1                      "Shown to all"
+#define qtn_bt_mode_2                      "Hidden"
+
+#define qtn_lock_note_title                "Lock Note"
+#define qtn_keys_keylock_title             "Lock Keys"
+
+#define qtn_keys_switch_applications_title "Cycle"
+#define qtn_keys_minimize_title            "Minimize"
+#define qtn_keys_close_title               "Close"
+#define qtn_keys_kill_title                "Kill"
+
+#define qtn_keys_app0_title                "Application 0"
+#define qtn_keys_app1_title                "Application 1"
+#define qtn_keys_app2_title                "Application 2"
+#define qtn_keys_app3_title                "Application 3"
+#define qtn_keys_app4_title                "Application 4"
+#define qtn_keys_app5_title                "Application 5"
+#define qtn_keys_app6_title                "Application 6"
+#define qtn_keys_app7_title                "Application 7"
+#define qtn_keys_app8_title                "Application 8"
+#define qtn_keys_app9_title                "Application 9"
+
+#define qtn_ntype_title                    "Note Type"
+#define qtn_timeout_title                  "Note Time (ms)"
+
+#define qtn_settinglist_item_listx         "none"
+#define qtn_ntype_item_list0               "Don't show"
+#define qtn_ntype_item_list1               "Hide by timeout"
+#define qtn_ntype_item_list2               "Hide by <ABC>"
+
+#define qtn_vibration_title                "Vibration"
+#define qtn_vibration_timeout_title        "Vibration (ms)"
+#define qtn_vibration_power_title          "Vibration power"
+#define qtn_vibration_power_min            "Weak"
+#define qtn_vibration_power_max            "Strong"
+
+#define qtn_compressed_memory              "Free : %d KB\nFull : %d KB"
+
+#define qtn_about                          "About"
+#define qtn_exit                           "Exit"
+
+#define qtn_test                           "Test"
+#define qtn_log_title                      "Log"
+#define qtn_capturepriority_title          "Priority"
+
+#define qtn_view1_tab                      "Main"
+#define qtn_view2_tab                      "Language"
+#define qtn_view3_tab                      "Phone"
+#define qtn_view4_tab                      "Bluetooth"
+#define qtn_view5_tab                      "Process"
+#define qtn_view6_tab                      "Application"
+#define qtn_view7_tab                      "Vibration"
+
+#define qtn_wait                           "Wait..."
+
+#define qtn_unknown                        "Unknown"

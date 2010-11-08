@@ -1,0 +1,6 @@
+PRJ_MMPFILES
+KeyMan_FP1.mmp
+KeyMan_FP2.mmp
+KeyMan_FP3.mmp
+
+GNUMAKEFILE icons_aif.mk

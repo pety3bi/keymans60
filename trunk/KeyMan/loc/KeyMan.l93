@@ -1,0 +1,85 @@
+#define ELanguage                           ELangUkrainian
+
+#define qtn_register                       "Реєстрація"
+#define qtn_register_code                  "Код розблокування"
+
+#define qtn_on                             "Увімкнено"
+#define qtn_off                            "Вимкнено"
+
+#define qtn_autostart_title                "Автостарт"
+#define qtn_mmkey_title                    "Скасовувати AnyKey"
+
+#define qtn_filemanagers_title             "Файл-менеджери"
+#define qtn_camera_title                   "Камера"
+#define qtn_bookreaders_title              "QReader"
+
+#define qtn_keys_toggle_title              "Відобразити KeyMan"
+#define qtn_keys_title                     "Змініти мову"
+#define qtn_language_title_first           "Перша мова"
+#define qtn_language_title_second          "Друга мова"
+#define qtn_language_title_third           "Третя мова"
+
+#define qtn_language                       "Вибрана мова:\n%S"
+
+#define qtn_keys_memory_title              "Стиснути пам'ять"
+#define qtn_keys_restart_title             "Перезавантаження"
+#define qtn_keys_shutdown_title            "Вимкнення"
+
+#define qtn_keys_btstate_title             "Bluetooth"
+#define qtn_keys_btmode_title              "Доступ до телефону"
+
+#define qtn_bt_mode                        "Вибраний режим:\n%S"
+#define qtn_bt_mode_1                      "Доступний всім"
+#define qtn_bt_mode_2                      "Прихований"
+
+#define qtn_lock_note_title                "Повідомлення"
+#define qtn_keys_keylock_title             "Блокування клавіш"
+
+#define qtn_keys_switch_applications_title "Наступне"
+#define qtn_keys_minimize_title            "Згорнути"
+#define qtn_keys_close_title               "Закрити"
+#define qtn_keys_kill_title                "Завершити"
+
+#define qtn_keys_app0_title                "Програма 0"
+#define qtn_keys_app1_title                "Програма 1"
+#define qtn_keys_app2_title                "Програма 2"
+#define qtn_keys_app3_title                "Програма 3"
+#define qtn_keys_app4_title                "Програма 4"
+#define qtn_keys_app5_title                "Програма 5"
+#define qtn_keys_app6_title                "Програма 6"
+#define qtn_keys_app7_title                "Програма 7"
+#define qtn_keys_app8_title                "Програма 8"
+#define qtn_keys_app9_title                "Програма 9"
+
+#define qtn_ntype_title                    "Повідомлення"
+#define qtn_timeout_title                  "Повідомлення (мс)"
+
+#define qtn_settinglist_item_listx         "ні"
+#define qtn_ntype_item_list0               "Не відображати"
+#define qtn_ntype_item_list1               "Приховувати по таймеру"
+#define qtn_ntype_item_list2               "Приховувати по <ABC>"
+
+#define qtn_vibration_title                "Вібрація"
+#define qtn_vibration_timeout_title        "Вібрація (мс)"
+#define qtn_vibration_power_title          "Вібрація (потужність)"
+#define qtn_vibration_power_min            "Слабо"
+#define qtn_vibration_power_max            "Сильно"
+
+#define qtn_compressed_memory              "Стиснуто : %d KB\nВсього  : %d KB"
+
+#define qtn_about                          "Про програму"
+#define qtn_exit                           "Вихід"
+
+#define qtn_test                           "Перевірка"
+#define qtn_log_title                      "Звіт"
+#define qtn_capturepriority_title          "Приорітет"
+
+#define qtn_view1_tab                      "Основні"
+#define qtn_view2_tab                      "Мова"
+#define qtn_view3_tab                      "Телефон"
+#define qtn_view4_tab                      "Bluetooth"
+#define qtn_view5_tab                      "Процеси"
+#define qtn_view6_tab                      "Програми"
+#define qtn_view7_tab                      "Вібрація"
+
+#define qtn_unknown                        "Невідомий"
