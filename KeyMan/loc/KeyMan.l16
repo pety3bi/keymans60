@@ -1,0 +1,87 @@
+#define ELanguage                          ELangRussian
+
+#define qtn_register                       "Регистрация"
+#define qtn_register_code                  "Код разблокировки"
+
+#define qtn_on                             "Включено"
+#define qtn_off                            "Выключено"
+
+#define qtn_autostart_title                "Автозапуск"
+#define qtn_mmkey_title                    "Завершать AnyKey"
+
+#define qtn_filemanagers_title             "Файл-менеджеры"
+#define qtn_camera_title                   "Камера"
+#define qtn_bookreaders_title              "QReader"
+
+#define qtn_keys_toggle_title              "Показать KeyMan"
+#define qtn_keys_title                     "Изменить язык"
+#define qtn_language_title_first           "Первый язык"
+#define qtn_language_title_second          "Второй язык"
+#define qtn_language_title_third           "Третий язык"
+
+#define qtn_language                       "Выбран язык:\n%S"
+
+#define qtn_keys_memory_title              "Сжать память"
+#define qtn_keys_restart_title             "Перезагрузка"
+#define qtn_keys_shutdown_title            "Выключение"
+
+#define qtn_keys_btstate_title             "Bluetooth"
+#define qtn_keys_btmode_title              "Доступ к телефону"
+
+#define qtn_bt_mode                        "Выбран режим:\n%S"
+#define qtn_bt_mode_1                      "Доступен всем"
+#define qtn_bt_mode_2                      "Скрыт"
+
+#define qtn_lock_note_title                "Оповещение"
+#define qtn_keys_keylock_title             "Блокировка кнопок"
+
+#define qtn_keys_switch_applications_title "Следующее"
+#define qtn_keys_minimize_title            "Свернуть"
+#define qtn_keys_close_title               "Закрыть"
+#define qtn_keys_kill_title                "Завершить"
+
+#define qtn_keys_app0_title                "Приложение 0"
+#define qtn_keys_app1_title                "Приложение 1"
+#define qtn_keys_app2_title                "Приложение 2"
+#define qtn_keys_app3_title                "Приложение 3"
+#define qtn_keys_app4_title                "Приложение 4"
+#define qtn_keys_app5_title                "Приложение 5"
+#define qtn_keys_app6_title                "Приложение 6"
+#define qtn_keys_app7_title                "Приложение 7"
+#define qtn_keys_app8_title                "Приложение 8"
+#define qtn_keys_app9_title                "Приложение 9"
+
+#define qtn_ntype_title                    "Оповещение"
+#define qtn_timeout_title                  "Оповещение (мс)"
+
+#define qtn_settinglist_item_listx         "нет"
+#define qtn_ntype_item_list0               "Не отображать"
+#define qtn_ntype_item_list1               "Скрывать по таймеру"
+#define qtn_ntype_item_list2               "Скрывать по <ABC>"
+
+#define qtn_vibration_title                "Вибрация"
+#define qtn_vibration_timeout_title        "Вибрация (мс)"
+#define qtn_vibration_power_title          "Вибрация (сила)"
+#define qtn_vibration_power_min            "Слабо"
+#define qtn_vibration_power_max            "Сильно"
+
+#define qtn_compressed_memory              "Сжато : %d KB\nВсего  : %d KB"
+
+#define qtn_about                          "О программе"
+#define qtn_exit                           "Выход"
+
+#define qtn_test                           "Проверка"
+#define qtn_log_title                      "Отчет"
+#define qtn_capturepriority_title          "Приоритет"
+
+#define qtn_view1_tab                      "Основные"
+#define qtn_view2_tab                      "Язык"
+#define qtn_view3_tab                      "Телефон"
+#define qtn_view4_tab                      "Bluetooth"
+#define qtn_view5_tab                      "Процессы"
+#define qtn_view6_tab                      "Программы"
+#define qtn_view7_tab                      "Вибрация"
+
+#define qtn_wait                           "Подождите..."
+
+#define qtn_unknown                        "Неизвестный"

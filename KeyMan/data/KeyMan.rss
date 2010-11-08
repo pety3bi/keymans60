@@ -1,0 +1,934 @@
+NAME    AWIZ
+
+#include <eikon.rh>
+#include "KeyMan.hrh"
+#include "keyman.loc"
+#include <avkon.rsg>
+#include <avkon.rh>
+#include <avkon.mbg>
+#include <appinfo.rh>
+
+#define AVKON_BMPFILE_NAME "z:\\system\\data\\avkon.mbm"
+
+CHARACTER_SET UTF8
+
+RESOURCE RSS_SIGNATURE { }
+
+RESOURCE TBUF r_default_document_name { buf="KeyMan"; }
+
+RESOURCE EIK_APP_INFO
+{
+	status_pane = r_keyman_status_pane;
+}
+
+RESOURCE STATUS_PANE_APP_MODEL r_keyman_status_pane
+{
+	panes =
+	{
+		SPANE_PANE
+		{
+			id = EEikStatusPaneUidNavi;
+			type = EAknCtNaviPane;
+			resource = r_keyman_navi_decorator;
+		}
+	};
+}
+
+RESOURCE NAVI_DECORATOR r_keyman_navi_decorator
+{
+	type = ENaviDecoratorControlTabGroup;
+	control = TAB_GROUP
+	{
+		tab_width = EAknTabWidthWithThreeLongTabs;
+		active = 0;
+		tabs =
+		{
+			TAB
+			{
+				id = EKeyManView1Tab;
+				txt = qtn_view1_tab;
+			},
+			TAB
+			{
+				id = EKeyManView2Tab;
+				txt = qtn_view2_tab;
+			},
+			TAB
+			{
+				id = EKeyManView3Tab;
+				txt = qtn_view3_tab;
+			},
+			TAB
+			{
+				id = EKeyManView4Tab;
+				txt = qtn_view4_tab;
+			},
+			TAB
+			{
+				id = EKeyManView5Tab;
+				txt = qtn_view5_tab;
+			},
+			TAB
+			{
+				id = EKeyManView6Tab;
+				txt = qtn_view6_tab;
+			}
+/*
+			,
+			TAB
+			{
+				id = EKeyManView7Tab;
+				txt = qtn_view7_tab;
+			},
+			TAB
+			{
+				id = EKeyManView8Tab;
+				txt = qtn_test;
+			}
+*/
+		};
+	};
+}
+
+RESOURCE TBUF r_lsw_view7_tab { buf = qtn_view7_tab;}
+
+RESOURCE AVKON_VIEW r_keyman_view1
+{
+	menubar = r_keyman_menubar_view1;  
+	cba     = R_AVKON_SOFTKEYS_SELECTION_LIST;    
+}
+
+RESOURCE MENU_BAR r_keyman_menubar_view1
+{
+	titles =
+	{
+		MENU_TITLE { menu_pane = r_keyman_view1_menu; txt = "App"; }
+	};
+}
+
+RESOURCE MENU_PANE r_keyman_view1_menu
+{
+	items =
+	{
+		MENU_ITEM { command=EKeyManCmdAppAbout; txt=qtn_about; },
+		MENU_ITEM { command=EKeyManCmdAppRegister; txt=qtn_register; },
+		MENU_ITEM { command=EAknCmdExit; txt=qtn_exit; }
+	};
+}
+
+RESOURCE AVKON_VIEW r_keyman_view2
+{
+	cba     = R_AVKON_SOFTKEYS_OK_EMPTY;
+}
+
+RESOURCE LOCALISABLE_APP_INFO r_keyman_localisable_app_info
+{
+	short_caption = qtn_short_caption;
+	caption_and_icon = 
+		CAPTION_AND_ICON_INFO
+		{
+			caption = qtn_caption;
+			number_of_icons = 1;
+			icon_file = "\\System\\Apps\\KeyMan\\KeyMan_aif.mif";
+		};
+}
+
+RESOURCE AVKON_SETTING_ITEM_LIST r_setting_list_0
+{
+	flags = 0;
+	title = qtn_caption;
+	initial_number = 1;
+	items =
+	{
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingAutoStart;
+			name = qtn_autostart_title;
+			setting_page_resource = r_lsw_settinglist_autostart_sp;
+			associated_resource = r_lsw_settinglist_on_off;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingMMKey;
+			name = qtn_mmkey_title;
+			setting_page_resource = r_lsw_settinglist_mmkey_sp;
+			associated_resource = r_lsw_settinglist_on_off;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingFileManagers;
+			name = qtn_filemanagers_title;
+			setting_page_resource = r_lsw_settinglist_filemanagers_sp;
+			associated_resource = r_lsw_settinglist_on_off;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingBookReaders;
+			name = qtn_bookreaders_title;
+			setting_page_resource = r_lsw_settinglist_bookreaders_sp;
+			associated_resource = r_lsw_settinglist_on_off;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingCamera;
+			name = qtn_camera_title;
+			setting_page_resource = r_lsw_settinglist_camera_sp;
+			associated_resource = r_lsw_settinglist_on_off;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysToggle;
+			name = qtn_keys_toggle_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingNoteType;
+			name = qtn_ntype_title;
+			setting_page_resource = r_lsw_ntype_sp;
+			associated_resource = r_lsw_ntype_setting_list;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingNoteTimeout;
+			name = qtn_timeout_title;
+			setting_page_resource = r_lsw_settinglist_integertext_sp;
+		}
+	};
+}
+
+RESOURCE AVKON_SETTING_ITEM_LIST r_setting_list_1
+{
+	flags = 0/*EAknSettingItemNumberedStyle*/;
+	title = qtn_caption;
+	initial_number = 1;
+	items =
+	{
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeys;
+			name = qtn_keys_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingLanguageFirst;
+			name = qtn_language_title_first;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysFirst;
+			name = qtn_language_title_first;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingLanguageSecond;
+			name = qtn_language_title_second;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysSecond;
+			name = qtn_language_title_second;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingEnableThird;
+			name = qtn_language_title_third;
+			setting_page_resource = r_lsw_settinglist_enable_third_sp;
+			associated_resource = r_lsw_settinglist_on_off;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingLanguageThird;
+			name = qtn_language_title_third;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysThird;
+			name = qtn_language_title_third;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		}
+	};
+}
+
+RESOURCE AVKON_SETTING_ITEM_LIST r_setting_list_2
+{
+	flags = 0/*EAknSettingItemNumberedStyle*/;
+	title = qtn_caption;
+	initial_number = 1;
+	items =
+	{
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysMemory;
+			name = qtn_keys_memory_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysRestart;
+			name = qtn_keys_restart_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysShutdown;
+			name = qtn_keys_shutdown_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysKeyLock;
+			name = qtn_keys_keylock_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingLockNote;
+			name = qtn_lock_note_title;
+			setting_page_resource = r_lsw_settinglist_lock_note_sp;
+			associated_resource = r_lsw_settinglist_on_off;
+		}
+	};
+}
+
+RESOURCE AVKON_SETTING_ITEM_LIST r_setting_list_3
+{
+	flags = 0/*EAknSettingItemNumberedStyle*/;
+	title = qtn_caption;
+	initial_number = 1;
+	items =
+	{
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysBTState;
+			name = qtn_keys_btstate_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysBTMode;
+			name = qtn_keys_btmode_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		}
+	};
+}
+
+RESOURCE AVKON_SETTING_ITEM_LIST r_setting_list_4
+{
+	flags = 0/*EAknSettingItemNumberedStyle*/;
+	title = qtn_caption;
+	initial_number = 1;
+	items =
+	{
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysSwitchApplications;
+			name = qtn_keys_switch_applications_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysMinimize;
+			name = qtn_keys_minimize_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysClose;
+			name = qtn_keys_close_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysKill;
+			name = qtn_keys_kill_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		}
+	};
+}
+
+RESOURCE AVKON_SETTING_ITEM_LIST r_setting_list_5
+{
+	flags = 0/*EAknSettingItemNumberedStyle*/;
+	title = qtn_caption;
+	initial_number = 1;
+	items =
+	{
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysApp0;
+			name = qtn_keys_app0_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingAppUID0;
+			name = qtn_keys_app0_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysApp1;
+			name = qtn_keys_app1_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingAppUID1;
+			name = qtn_keys_app1_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysApp2;
+			name = qtn_keys_app2_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingAppUID2;
+			name = qtn_keys_app2_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysApp3;
+			name = qtn_keys_app3_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingAppUID3;
+			name = qtn_keys_app3_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysApp4;
+			name = qtn_keys_app4_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingAppUID4;
+			name = qtn_keys_app4_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysApp5;
+			name = qtn_keys_app5_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingAppUID5;
+			name = qtn_keys_app5_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysApp6;
+			name = qtn_keys_app6_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingAppUID6;
+			name = qtn_keys_app6_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysApp7;
+			name = qtn_keys_app7_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingAppUID7;
+			name = qtn_keys_app7_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysApp8;
+			name = qtn_keys_app8_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingAppUID8;
+			name = qtn_keys_app8_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysApp9;
+			name = qtn_keys_app9_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingAppUID9;
+			name = qtn_keys_app9_title;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+		}		
+	};
+}
+
+RESOURCE AVKON_SETTING_ITEM_LIST r_setting_list_6
+{
+	flags = 0/*EAknSettingItemNumberedStyle*/;
+	title = qtn_caption;
+	initial_number = 1;
+	items =
+	{
+#ifndef SERIES_60_FP1
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingVibration;
+			name = qtn_vibration_title;
+			setting_page_resource = r_lsw_settinglist_vibration_sp;
+			associated_resource = r_lsw_settinglist_on_off;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingVibrationTimeout;
+			name = qtn_vibration_timeout_title;
+			setting_page_resource = r_lsw_settinglist_integertext_sp;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingVibrationPower;
+			name = qtn_vibration_power_title;
+			setting_page_resource = r_slider_setting_page;
+		}
+#endif
+	};
+}
+
+RESOURCE AVKON_SETTING_ITEM_LIST r_setting_list_7
+{
+	flags = 0/*EAknSettingItemNumberedStyle*/;
+	title = qtn_caption;
+	initial_number = 1;
+	items =
+	{
+// Test only
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingKeysTest;
+			name = qtn_test;
+			setting_page_resource = r_lsw_settinglist_keys_sp;
+			associated_resource = r_lsw_settinglist_keys_texts;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingLog;
+			name = qtn_log_title;
+			setting_page_resource = r_lsw_settinglist_log_sp;
+			associated_resource = r_lsw_settinglist_on_off;
+		},
+		AVKON_SETTING_ITEM
+		{
+			identifier = EKeyManSettingCapturePriority;
+			name = qtn_capturepriority_title;
+			setting_page_resource = r_lsw_settinglist_capturepriority_sp;
+		}
+	};
+}
+
+RESOURCE AVKON_POPUP_SETTING_TEXTS r_lsw_settinglist_on_off
+{
+	flags = 0; // Possible EINVERTORDER;
+	setting_texts_resource = r_lsw_settinglist_on_off_texts;
+}
+
+RESOURCE ARRAY r_lsw_settinglist_on_off_texts
+{
+	items =
+	{
+		AVKON_ENUMERATED_TEXT { value=1; text = qtn_on; },
+		AVKON_ENUMERATED_TEXT { value=0; text = qtn_off; }
+	};
+}
+
+RESOURCE AVKON_SETTING_PAGE r_lsw_settinglist_autostart_sp
+{   
+	number = EAknSettingPageNoOrdinalDisplayed;
+	label = qtn_autostart_title;
+	type = EAknCtPopupSettingList;
+}
+
+RESOURCE AVKON_SETTING_PAGE r_lsw_settinglist_filemanagers_sp
+{
+	number = EAknSettingPageNoOrdinalDisplayed;
+	label = qtn_filemanagers_title;
+	type = EAknCtPopupSettingList;
+}
+
+RESOURCE AVKON_SETTING_PAGE r_lsw_settinglist_bookreaders_sp
+{
+	number = EAknSettingPageNoOrdinalDisplayed;
+	label = qtn_bookreaders_title;
+	type = EAknCtPopupSettingList;
+}
+
+RESOURCE AVKON_SETTING_PAGE r_lsw_settinglist_camera_sp
+{
+	number = EAknSettingPageNoOrdinalDisplayed;
+	label = qtn_camera_title;
+	type = EAknCtPopupSettingList;
+}
+
+RESOURCE AVKON_SETTING_PAGE r_lsw_settinglist_mmkey_sp
+{
+	number = EAknSettingPageNoOrdinalDisplayed;
+	label = qtn_mmkey_title;
+	type = EAknCtPopupSettingList;
+}
+
+RESOURCE AVKON_SETTING_PAGE r_lsw_settinglist_log_sp
+{
+	number = EAknSettingPageNoOrdinalDisplayed;
+	label = qtn_log_title;
+	type = EAknCtPopupSettingList;
+}
+
+RESOURCE AVKON_SETTING_PAGE r_lsw_settinglist_enable_third_sp
+{
+	number = EAknSettingPageNoOrdinalDisplayed;
+	label = qtn_enable_third_title;
+	type = EAknCtPopupSettingList;
+}
+
+RESOURCE AVKON_SETTING_PAGE r_lsw_settinglist_lock_note_sp
+{
+	number = EAknSettingPageNoOrdinalDisplayed;
+	label = qtn_lock_note_title;
+	type = EAknCtPopupSettingList;
+}
+
+#ifndef SERIES_60_FP1
+RESOURCE AVKON_SETTING_PAGE r_lsw_settinglist_vibration_sp
+{
+	number = EAknSettingPageNoOrdinalDisplayed;
+	label = qtn_vibration_title;
+	type = EAknCtPopupSettingList;
+}
+
+RESOURCE AVKON_SETTING_PAGE r_slider_setting_page
+{
+	type = EAknCtSlider;
+	editor_resource_id = r_slider_setting_editor;
+}
+
+RESOURCE SLIDER r_slider_setting_editor
+{
+	layout = EAknSettingsItemSliderLayout;
+	minvalue = 30;
+	maxvalue = 100;
+	step = 10;
+	valuetype = EAknSliderValueDecimal;
+	minlabel = qtn_vibration_power_min;
+	maxlabel = qtn_vibration_power_max;
+}
+#endif
+
+RESOURCE AVKON_SETTING_PAGE r_lsw_settinglist_keys_sp
+{
+	number = EAknSettingPageNoOrdinalDisplayed/*1*/;
+	type = EAknCtPopupSettingList;
+	editor_resource_id = r_lsw_settinglist_keys_settings;
+}
+
+RESOURCE POPUP_SETTING_LIST r_lsw_settinglist_keys_settings
+{
+	flags = 0; // EAknPopupSettingListFlagAllowsUserDefinedEntry;
+}
+
+RESOURCE AVKON_POPUP_SETTING_TEXTS r_lsw_settinglist_keys_texts
+{
+	flags = 0; // Possible EINVERTORDER;
+	setting_texts_resource = r_lsw_settinglist_keys_array;
+	popped_up_texts_resource = r_lsw_settinglist_keys_popup_array;
+}
+
+RESOURCE ARRAY r_lsw_settinglist_keys_array
+{
+	items =
+	{
+		AVKON_ENUMERATED_TEXT { value = -1; text = qtn_settinglist_item_listx; },
+		AVKON_ENUMERATED_TEXT { value = 0; text = qtn_settinglist_item_list0; },
+		AVKON_ENUMERATED_TEXT { value = 1; text = qtn_settinglist_item_list1; },
+		AVKON_ENUMERATED_TEXT { value = 2; text = qtn_settinglist_item_list2; },
+		AVKON_ENUMERATED_TEXT { value = 3; text = qtn_settinglist_item_list3; },
+		AVKON_ENUMERATED_TEXT { value = 4; text = qtn_settinglist_item_list4; },
+		AVKON_ENUMERATED_TEXT { value = 5; text = qtn_settinglist_item_list5; },
+		AVKON_ENUMERATED_TEXT { value = 6; text = qtn_settinglist_item_list6; },
+		AVKON_ENUMERATED_TEXT { value = 7; text = qtn_settinglist_item_list7; },
+		AVKON_ENUMERATED_TEXT { value = 8; text = qtn_settinglist_item_list8; },
+		AVKON_ENUMERATED_TEXT { value = 9; text = qtn_settinglist_item_list9; },
+		AVKON_ENUMERATED_TEXT { value = 10; text = qtn_settinglist_item_list10; },
+		AVKON_ENUMERATED_TEXT { value = 11; text = qtn_settinglist_item_list11; },
+		AVKON_ENUMERATED_TEXT { value = 12; text = qtn_settinglist_item_list12; },
+		AVKON_ENUMERATED_TEXT { value = 13; text = qtn_settinglist_item_list13; },
+		AVKON_ENUMERATED_TEXT { value = 14; text = qtn_settinglist_item_list14; },
+		AVKON_ENUMERATED_TEXT { value = 15; text = qtn_settinglist_item_list15; },
+		AVKON_ENUMERATED_TEXT { value = 16; text = qtn_settinglist_item_list16; },
+		AVKON_ENUMERATED_TEXT { value = 17; text = qtn_settinglist_item_list17; },
+		AVKON_ENUMERATED_TEXT { value = 18; text = qtn_settinglist_item_list18; },
+		AVKON_ENUMERATED_TEXT { value = 19; text = qtn_settinglist_item_list19; },
+		AVKON_ENUMERATED_TEXT { value = 20; text = qtn_settinglist_item_list20; },
+//		AVKON_ENUMERATED_TEXT { value = 21; text = qtn_settinglist_item_list21; },
+		AVKON_ENUMERATED_TEXT { value = 22; text = qtn_settinglist_item_list22; },
+		AVKON_ENUMERATED_TEXT { value = 23; text = qtn_settinglist_item_list23; },
+		AVKON_ENUMERATED_TEXT { value = 24; text = qtn_settinglist_item_list24; },
+		AVKON_ENUMERATED_TEXT { value = 25; text = qtn_settinglist_item_list25; },
+		AVKON_ENUMERATED_TEXT { value = 26; text = qtn_settinglist_item_list26; },
+		AVKON_ENUMERATED_TEXT { value = 27; text = qtn_settinglist_item_list27; },
+		AVKON_ENUMERATED_TEXT { value = 28; text = qtn_settinglist_item_list28; },
+		AVKON_ENUMERATED_TEXT { value = 29; text = qtn_settinglist_item_list29; },
+//		AVKON_ENUMERATED_TEXT { value = 30; text = qtn_settinglist_item_list30; },
+//		AVKON_ENUMERATED_TEXT { value = 31; text = qtn_settinglist_item_list31; },
+		AVKON_ENUMERATED_TEXT { value = 32; text = qtn_settinglist_item_list32; },
+		AVKON_ENUMERATED_TEXT { value = 33; text = qtn_settinglist_item_list33; },
+		AVKON_ENUMERATED_TEXT { value = 34; text = qtn_settinglist_item_list34; },
+		AVKON_ENUMERATED_TEXT { value = 35; text = qtn_settinglist_item_list35; },
+		AVKON_ENUMERATED_TEXT { value = 36; text = qtn_settinglist_item_list36; },
+
+		AVKON_ENUMERATED_TEXT { value = 50; text = qtn_settinglist_item_list50; },
+		AVKON_ENUMERATED_TEXT { value = 51; text = qtn_settinglist_item_list51; },
+		AVKON_ENUMERATED_TEXT { value = 52; text = qtn_settinglist_item_list52; },
+		AVKON_ENUMERATED_TEXT { value = 53; text = qtn_settinglist_item_list53; },
+		AVKON_ENUMERATED_TEXT { value = 54; text = qtn_settinglist_item_list54; },
+		AVKON_ENUMERATED_TEXT { value = 55; text = qtn_settinglist_item_list55; }//,
+
+//		AVKON_ENUMERATED_TEXT { value = 90; text = qtn_settinglist_item_list90; },
+//		AVKON_ENUMERATED_TEXT { value = 91; text = qtn_settinglist_item_list91; },
+//		AVKON_ENUMERATED_TEXT { value = 92; text = qtn_settinglist_item_list92; },
+//		AVKON_ENUMERATED_TEXT { value = 93; text = qtn_settinglist_item_list93; },
+//		AVKON_ENUMERATED_TEXT { value = 94; text = qtn_settinglist_item_list94; },
+//		AVKON_ENUMERATED_TEXT { value = 95; text = qtn_settinglist_item_list95; }
+	};
+}
+
+RESOURCE ARRAY r_lsw_settinglist_keys_popup_array
+{
+	items =
+	{
+		LBUF { txt = qtn_settinglist_item_listx; },
+		LBUF { txt = qtn_settinglist_item_list0; },
+		LBUF { txt = qtn_settinglist_item_list1; },
+		LBUF { txt = qtn_settinglist_item_list2; },
+		LBUF { txt = qtn_settinglist_item_list3; },
+		LBUF { txt = qtn_settinglist_item_list4; },
+		LBUF { txt = qtn_settinglist_item_list5; },
+		LBUF { txt = qtn_settinglist_item_list6; },
+		LBUF { txt = qtn_settinglist_item_list7; },
+		LBUF { txt = qtn_settinglist_item_list8; },
+		LBUF { txt = qtn_settinglist_item_list9; },
+		LBUF { txt = qtn_settinglist_item_list10; },
+		LBUF { txt = qtn_settinglist_item_list11; },
+		LBUF { txt = qtn_settinglist_item_list12; },
+		LBUF { txt = qtn_settinglist_item_list13; },
+		LBUF { txt = qtn_settinglist_item_list14; },
+		LBUF { txt = qtn_settinglist_item_list15; },
+		LBUF { txt = qtn_settinglist_item_list16; },
+		LBUF { txt = qtn_settinglist_item_list17; },
+		LBUF { txt = qtn_settinglist_item_list18; },
+		LBUF { txt = qtn_settinglist_item_list19; },
+		LBUF { txt = qtn_settinglist_item_list20; },
+//		LBUF { txt = qtn_settinglist_item_list21; },
+		LBUF { txt = qtn_settinglist_item_list22; },
+		LBUF { txt = qtn_settinglist_item_list23; },
+		LBUF { txt = qtn_settinglist_item_list24; },
+		LBUF { txt = qtn_settinglist_item_list25; },
+		LBUF { txt = qtn_settinglist_item_list26; },
+		LBUF { txt = qtn_settinglist_item_list27; },
+		LBUF { txt = qtn_settinglist_item_list28; },
+		LBUF { txt = qtn_settinglist_item_list29; },
+//		LBUF { txt = qtn_settinglist_item_list30; },
+//		LBUF { txt = qtn_settinglist_item_list31; },
+		LBUF { txt = qtn_settinglist_item_list32; },
+		LBUF { txt = qtn_settinglist_item_list33; },
+		LBUF { txt = qtn_settinglist_item_list34; },
+		LBUF { txt = qtn_settinglist_item_list35; },
+		LBUF { txt = qtn_settinglist_item_list36; },
+
+		LBUF { txt = qtn_settinglist_item_list50; },
+		LBUF { txt = qtn_settinglist_item_list51; },
+		LBUF { txt = qtn_settinglist_item_list52; },
+		LBUF { txt = qtn_settinglist_item_list53; },
+		LBUF { txt = qtn_settinglist_item_list54; },
+		LBUF { txt = qtn_settinglist_item_list55; }//,
+
+//		LBUF { txt = qtn_settinglist_item_list90; },
+//		LBUF { txt = qtn_settinglist_item_list91; },
+//		LBUF { txt = qtn_settinglist_item_list92; },
+//		LBUF { txt = qtn_settinglist_item_list93; },
+//		LBUF { txt = qtn_settinglist_item_list94; },
+//		LBUF { txt = qtn_settinglist_item_list95; }
+	};
+}
+
+RESOURCE AVKON_SETTING_PAGE r_lsw_ntype_sp
+{
+	number = EAknSettingPageNoOrdinalDisplayed/*2*/;
+	label = qtn_ntype_title;
+	type = EAknCtPopupSettingList;
+	editor_resource_id = r_lsw_settinglist_ntype_settings;
+}
+
+RESOURCE POPUP_SETTING_LIST r_lsw_settinglist_ntype_settings
+{
+	flags = 0; // EAknPopupSettingListFlagAllowsUserDefinedEntry;
+}
+
+RESOURCE AVKON_POPUP_SETTING_TEXTS r_lsw_ntype_setting_list
+{
+	flags = 0; // Possible EINVERTORDER;
+	setting_texts_resource = r_lsw_ntype_array;
+	popped_up_texts_resource = r_lsw_ntype_popup_array;
+}
+
+RESOURCE ARRAY r_lsw_ntype_array
+{
+	items =
+	{
+		AVKON_ENUMERATED_TEXT { value = 0; text = qtn_ntype_item_list0; },
+		AVKON_ENUMERATED_TEXT { value = 1; text = qtn_ntype_item_list1; },
+		AVKON_ENUMERATED_TEXT { value = 2; text = qtn_ntype_item_list2; }
+	};
+}
+
+RESOURCE ARRAY r_lsw_ntype_popup_array
+{
+	items =
+	{
+		LBUF { txt = qtn_ntype_item_list0; },
+		LBUF { txt = qtn_ntype_item_list1; },
+		LBUF { txt = qtn_ntype_item_list2; }
+	};
+}
+
+RESOURCE AVKON_SETTING_PAGE r_lsw_settinglist_integertext_sp
+{
+	number = EAknSettingPageNoOrdinalDisplayed/*3*/;
+	label = qtn_timeout_title;
+	type = EAknCtIntegerEdwin;
+	editor_resource_id = r_lsw_settinglist_edwin;
+}
+
+RESOURCE AVKON_INTEGER_EDWIN r_lsw_settinglist_edwin
+{
+	min = 0;
+	max = 3000;
+}
+
+RESOURCE AVKON_SETTING_PAGE r_lsw_settinglist_capturepriority_sp
+{
+	number = EAknSettingPageNoOrdinalDisplayed/*3*/;
+	label = qtn_capturepriority_title;
+	type = EAknCtIntegerEdwin;
+	editor_resource_id = r_lsw_settinglist_capturepriority;
+}
+
+RESOURCE AVKON_INTEGER_EDWIN r_lsw_settinglist_capturepriority
+{
+	min = 0;
+	max = 9999999;
+}
+
+RESOURCE DIALOG r_km_registration
+{
+	flags = EGeneralQueryFlags;
+	buttons = R_AVKON_SOFTKEYS_OK_CANCEL;
+	items =
+	{
+		DLG_LINE
+		{
+			type = EAknCtQuery;
+			id = EGeneralQuery;
+			control = AVKON_DATA_QUERY
+			{
+				layout = EDataLayout;
+				label = qtn_register_code;
+				control = EDWIN
+				{
+					width = 5;
+					lines = 1;
+					maxlength = 15;
+				};
+			};
+		}
+	};
+}
+
+RESOURCE DIALOG r_wait_dialog
+{
+	flags = EAknWaitNoteFlags;
+	buttons = R_AVKON_SOFTKEYS_EMPTY;
+	items =
+	{
+		DLG_LINE
+		{
+			type = EAknCtNote;
+			id = EDialogWait;
+			control = AVKON_NOTE
+			{
+				layout = EWaitLayout;
+				singular_label = qtn_wait;
+				animation = R_QGN_GRAF_WAIT_BAR_ANIM;
+//				imagefile = AVKON_BMPFILE_NAME;
+//				imageid = EMbmAvkonQgn_note_copy;
+//				imagemask = EMbmAvkonQgn_note_copy_mask;
+			};
+		}
+	};
+}
+
+RESOURCE TBUF r_text_no { buf = qtn_settinglist_item_listx; }
+
+RESOURCE TBUF r_text_compressed_memory { buf = qtn_compressed_memory; }
+RESOURCE TBUF r_text_language { buf = qtn_language; }
+RESOURCE TBUF r_text_bt_mode { buf = qtn_bt_mode; }
+RESOURCE TBUF r_text_bt_mode_1 { buf = qtn_bt_mode_1; }
+RESOURCE TBUF r_text_bt_mode_2 { buf = qtn_bt_mode_2; }
+
+RESOURCE TBUF r_text_about { buf = qtn_about_text; }
+
+RESOURCE TBUF r_lsw_unknown { buf = qtn_unknown;}
+RESOURCE TBUF r_text_test { buf = qtn_test; }

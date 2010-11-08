@@ -1,0 +1,156 @@
+#ifndef KEYMAN_HRH
+#define KEYMAN_HRH
+
+enum TKeyManTabViewId
+{
+	EKeyManView1Tab,
+	EKeyManView2Tab,
+	EKeyManView3Tab,
+	EKeyManView4Tab,
+	EKeyManView5Tab,
+	EKeyManView6Tab,
+	EKeyManView7Tab,
+	EKeyManView8Tab
+};
+
+enum TKeyManCommandIds
+{
+	EKeyManCmdAppAbout = 1,
+	EKeyManCmdAppRegister
+};
+
+enum TAknExSettingItems
+{
+	EKeyManSettingAutoStart,
+	EKeyManSettingMMKey,
+	EKeyManSettingFileManagers,
+	EKeyManSettingBookReaders,
+	EKeyManSettingCamera,
+	EKeyManSettingKeysToggle,
+	EKeyManSettingNoteType,
+	EKeyManSettingNoteTimeout,
+
+	EKeyManSettingKeys,
+	EKeyManSettingKeysFirst,
+	EKeyManSettingLanguageFirst,
+	EKeyManSettingKeysSecond,
+	EKeyManSettingLanguageSecond,
+	EKeyManSettingEnableThird,
+	EKeyManSettingKeysThird,
+	EKeyManSettingLanguageThird,
+
+	EKeyManSettingKeysMemory,
+	EKeyManSettingKeysRestart,
+	EKeyManSettingKeysShutdown,
+	EKeyManSettingLockNote,
+	EKeyManSettingKeysKeyLock,
+
+	EKeyManSettingKeysBTState,
+	EKeyManSettingKeysBTMode,
+	
+	EKeyManSettingKeysSwitchApplications,
+	EKeyManSettingKeysMinimize,
+	EKeyManSettingKeysClose,
+	EKeyManSettingKeysKill,
+	
+	EKeyManSettingKeysApp0,
+	EKeyManSettingKeysApp1,
+	EKeyManSettingKeysApp2,
+	EKeyManSettingKeysApp3,
+	EKeyManSettingKeysApp4,
+	EKeyManSettingKeysApp5,
+	EKeyManSettingKeysApp6,
+	EKeyManSettingKeysApp7,
+	EKeyManSettingKeysApp8,
+	EKeyManSettingKeysApp9,
+	EKeyManSettingAppUID0,
+	EKeyManSettingAppUID1,
+	EKeyManSettingAppUID2,
+	EKeyManSettingAppUID3,
+	EKeyManSettingAppUID4,
+	EKeyManSettingAppUID5,
+	EKeyManSettingAppUID6,
+	EKeyManSettingAppUID7,
+	EKeyManSettingAppUID8,
+	EKeyManSettingAppUID9,
+	
+	EKeyManSettingVibration,
+	EKeyManSettingVibrationTimeout,
+	EKeyManSettingVibrationPower,
+	
+	EKeyManSettingKeysTest,
+	EKeyManSettingLog,
+	EKeyManSettingCapturePriority
+};
+
+enum TKeyManKeys
+{
+	EKeyNone           = -1,
+	EKeyShiftCall      = 0,
+	EKeyCall           = 1,
+	EKeyShiftBreak     = 2,
+	EKeyBreak          = 3,
+	EKeyShift1         = 4,
+	EKeyShift2         = 5,
+	EKeyShift3         = 6,
+	EKeyShift4         = 7,
+	EKeyShift5         = 8,
+	EKeyShift6         = 9,
+	EKeyShift7         = 10,
+	EKeyShift8         = 11,
+	EKeyShift9         = 12,
+	EKeyShift0         = 13,
+	EKeyShiftHash      = 14,
+	EKeyShiftStar      = 15,
+	EKeyShiftPower     = 16,
+	EKeyPower          = 17,
+	EKeyShiftMenuKey   = 18,
+	EKeyMenuKey        = 19,
+	EKeyShiftC         = 20,
+	EKeyShift          = 21,
+	EKeyShiftMM        = 22,
+	EKeyMM             = 23,
+	EKeyShiftPhoto     = 24,
+	EKeyPhoto          = 25,
+	EKeyShiftPTT       = 26,
+	EKeyPTT            = 27,
+	EKeyShiftPTT2      = 28,
+	EKeyPTT2           = 29,
+	EKeyShiftSoftLeft  = 30,
+	EKeyShiftSoftRight = 31,
+	EKeyShiftUp        = 32,
+	EKeyShiftDown      = 33,
+	EKeyShiftLeft      = 34,
+	EKeyShiftRight     = 35,
+	EKeyShiftCenter    = 36,
+		
+	EKeyLongPhoto      = 50,
+	EKeyLongMM         = 51,
+	EKeyLongMenu       = 52,
+	EKeyLongPower      = 53,
+	EKeyLongPTT        = 54,
+	EKeyLongPTT2       = 55,
+	
+	EKeyAD41Play       = 90,
+	EKeyAD41Stop       = 91,
+	EKeyAD41Rev        = 92,
+	EKeyAD41FF         = 93,
+	EKeyAD41VolUp      = 94,
+	EKeyAD41VolDown    = 95
+};
+
+enum TKeyManNType
+{
+	ENoteDont = 0,
+	ENoteTimeout,
+	ENoteABC
+};
+
+enum TDialogId
+{
+    EDialogWait = 3000,
+    EConfirmationQuery,
+    EDialogInfo
+};
+
+#endif

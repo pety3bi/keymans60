@@ -1,0 +1,10 @@
+#include "keyman.loc"
+#include <apcaptionfile.rh>
+
+CHARACTER_SET UTF8
+
+RESOURCE CAPTION_DATA
+{
+    caption=qtn_caption;
+    shortcaption=qtn_short_caption;
+}

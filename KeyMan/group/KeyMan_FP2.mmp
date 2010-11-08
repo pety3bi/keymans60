@@ -1,0 +1,60 @@
+// KeyMan project
+
+MACRO SERIES_60_FP2
+COMPRESSTARGET
+
+TARGET                                  KeyMan_FP2.app 
+TARGETTYPE                              app 
+UID                                     0x100039CE 0x20008D94 
+TARGETPATH                              \system\apps\KeyMan 
+
+SOURCEPATH                              ..\data 
+RESOURCE                                KeyMan.rss 
+RESOURCE                                KeyMan_caption.rss 
+
+SOURCEPATH                              ..\src
+SOURCE                                  KeyManListBox.cpp
+SOURCE                                  KeyManDocument.cpp
+SOURCE                                  KeyManContainerSettings.cpp
+SOURCE                                  KeyManContainerAbout.cpp
+SOURCE                                  KeyManView1.cpp
+SOURCE                                  KeyManView2.cpp
+SOURCE                                  KeyManAppUi.cpp
+SOURCE                                  KeyManApp.cpp
+
+USERINCLUDE                             ..\inc 
+USERINCLUDE                             ..\loc
+
+SYSTEMINCLUDE                           \epoc32\include 
+
+LIBRARY                                 cone.lib
+LIBRARY                                 eikcore.lib
+LIBRARY                                 eikcoctl.lib
+LIBRARY                                 avkon.lib
+LIBRARY                                 aknnotify.lib
+LIBRARY                                 vibractrl.lib
+LIBRARY                                 sysutil.lib
+LIBRARY                                 hal.lib
+LIBRARY                                 euser.lib
+LIBRARY                                 apparc.lib
+LIBRARY                                 apgrfx.lib
+LIBRARY                                 ws32.lib
+LIBRARY                                 commonengine.lib
+LIBRARY                                 bteng.lib
+LIBRARY                                 plpvariant.lib
+LIBRARY                                 flogger.lib
+LIBRARY                                 efsrv.lib
+LIBRARY                                 etext.lib
+LIBRARY                                 egul.lib
+LIBRARY                                 gdi.lib
+
+//SKIN
+LIBRARY                                 aknskins.lib
+LIBRARY                                 aknskinsrv.lib
+
+//LANGUAGE
+LIBRARY									akninputlanguage.lib
+
+LANG                                    01 16 93
+
+AIF                                     KeyMan.aif ..\aif KeyManaif.rss c24,8 qgn_keyman_cxt.bmp qgn_keyman_cxt_mask.bmp qgn_keyman_lst.bmp qgn_keyman_lst_mask.bmp

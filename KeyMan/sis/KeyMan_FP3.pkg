@@ -1,0 +1,35 @@
+; KeyMan.pkg
+
+; Languages
+&EN,RU,UK
+
+; Header
+#{"KeyMan", "KeyMan", "KeyMan"}, (0x20008D94), 1, 11, 0, TYPE=SISAPP
+
+; Platform compatibility
+(0x102032BD), 0, 0, 0, {"Series60ProductID", "Series60ProductID", "Series60ProductID"}
+
+; License
+IF NOT EXISTS ("C:\system\shareddata\20008d94.ini")
+	"C:\Symbian\projects\KeyMan\KeyMan\sis\License.txt"-"", FT, TA
+ENDIF
+
+; Changelog
+"c:\Symbian\Projects\KeyMan\KeyMan\sis\Changelog.txt"-"", FT, TC
+
+{
+"C:\Symbian\8.1a\S60_2nd_FP3\Epoc32\data\z\system\apps\KeyMan\KeyMan.r01"
+"C:\Symbian\8.1a\S60_2nd_FP3\Epoc32\data\z\system\apps\KeyMan\KeyMan.r16"
+"C:\Symbian\8.1a\S60_2nd_FP3\Epoc32\data\z\system\apps\KeyMan\KeyMan.r93"
+}-"!:\system\apps\KeyMan\KeyMan.rsc"
+
+; Application
+"c:\Symbian\8.1a\S60_2nd_FP3\Epoc32\Data\z\epoc32\data\z\SYSTEM\APPS\KEYMAN\KEYMAN_AIF.MIF"-"!:\system\apps\KeyMan\KeyMan_aif.mif"
+"C:\Symbian\8.1a\S60_2nd_FP3\Epoc32\Data\z\private\10003a3f\apps\KeyMan_reg.rsc"-"!:\private\10003a3f\apps\KeyMan_reg.rsc"
+"C:\Symbian\8.1a\S60_2nd_FP3\Epoc32\release\thumb\UREL\KeyMan_FP3.app"-"!:\system\apps\KeyMan\KeyMan.app"
+
+; Recognizer
+"C:\Symbian\8.1a\S60_2nd_FP3\Epoc32\release\thumb\UREL\20008D94.mdl"-"!:\system\recogs\20008D94.mdl"
+
+; ini
+""-"C:\system\shareddata\20008d94.ini",FN
