@@ -1,0 +1,1 @@
+**KeyMan for Symbian devices** © 2006-2008 IRoN
